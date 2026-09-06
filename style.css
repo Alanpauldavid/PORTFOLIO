@@ -27,7 +27,7 @@ body {
 }
 
 /* ==========================================================================
-   2. CUSTOM CURSOR & SCANLINES (Z-INDEX BUMPED FOR MODALS)
+   2. CUSTOM CURSOR & SCANLINES
    ========================================================================== */
 .cursor {
     width: 18px; 
@@ -37,7 +37,7 @@ body {
     top: 0; 
     left: 0; 
     pointer-events: none; 
-    z-index: 100001; /* Above modal overlays */
+    z-index: 100001; 
     border-radius: 2px;
     transition: width 0.25s ease, height 0.25s ease, background 0.25s ease, border-color 0.25s ease, border-radius 0.25s ease;
 }
@@ -47,7 +47,7 @@ body {
     top: 0; 
     left: 0; 
     pointer-events: none; 
-    z-index: 100002; /* Above cursor */
+    z-index: 100002; 
     color: #000; 
     background: var(--accent); 
     padding: 4px 10px;
@@ -169,7 +169,7 @@ nav {
 
 .about-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 50px; 
 }
 
@@ -184,7 +184,7 @@ nav {
 .about-heading { 
     font-size: clamp(2rem, 4vw, 3.2rem); 
     letter-spacing: -1.5px; 
-    line-height: 1; 
+    line-height: 1.1; 
 }
 
 .university-tag {
@@ -226,15 +226,17 @@ nav {
 }
 
 /* ==========================================================================
-   5. RECENT WORKS & PRODUCTION (EXPERIENCE REEL)
+   5. RECENT WORKS & PRODUCTION (FULL MULTI-SCREEN ADAPTIVE)
    ========================================================================== */
 .internship-section {
     padding: 80px 0;
     border-bottom: 1px solid var(--border);
+    width: 100%;
 }
 
 .internship-container {
     margin-top: 40px;
+    width: 100%;
 }
 
 .internship-card {
@@ -243,13 +245,20 @@ nav {
     border-radius: 12px;
     padding: 35px;
     display: grid;
-    grid-template-columns: 1fr 2.2fr;
+    grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr);
     gap: 40px;
     transition: border-color 0.3s ease;
+    width: 100%;
 }
 
 .internship-card:hover {
     border-color: var(--accent);
+}
+
+.internship-meta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .internship-role {
@@ -261,10 +270,10 @@ nav {
 }
 
 .company-name {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
     font-weight: 900;
     color: #fff;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 .company-loc {
@@ -287,18 +296,20 @@ nav {
     display: flex;
     gap: 12px;
     margin-top: 25px;
+    width: 100%;
 }
 
 .metric-box {
     border: 1px solid var(--border);
-    padding: 12px 16px;
+    padding: 12px 14px;
     border-radius: 6px;
     background: rgba(0, 0, 0, 0.3);
     flex: 1;
+    min-width: 0;
 }
 
 .metric-num {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     font-weight: 900;
     color: #fff;
     display: block;
@@ -308,11 +319,20 @@ nav {
     font-size: 0.6rem;
     color: #777;
     letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.internship-details {
+    min-width: 0; /* Prevents overflow blowout in CSS Grid */
+    width: 100%;
 }
 
 .internship-desc {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: clamp(0.78rem, 1.1vw, 0.86rem);
     line-height: 1.75;
     color: #aaa;
     background: rgba(255, 255, 255, 0.02);
@@ -324,7 +344,7 @@ nav {
 }
 
 .client-tags {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .client-title {
@@ -352,7 +372,9 @@ nav {
 
 /* HORIZONTAL SCROLL REEL */
 .reel-container {
-    margin-top: 20px;
+    margin-top: 15px;
+    width: 100%;
+    min-width: 0;
 }
 
 .works-title {
@@ -365,25 +387,31 @@ nav {
 
 .horizontal-scroll {
     display: flex;
-    gap: 18px;
+    gap: 16px;
     overflow-x: auto;
     padding-bottom: 15px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) transparent;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Momentum scroll for iOS */
+    scroll-snap-type: x mandatory;
+    width: 100%;
 }
 
 .horizontal-scroll::-webkit-scrollbar {
-    height: 4px;
+    height: 5px;
 }
 
 .horizontal-scroll::-webkit-scrollbar-thumb {
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 3px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .reel-item {
-    flex: 0 0 220px;
-    height: 280px;
+    flex: 0 0 210px;
+    height: 270px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -395,6 +423,7 @@ nav {
     display: flex;
     align-items: flex-end;
     padding: 15px;
+    scroll-snap-align: start;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -661,7 +690,7 @@ footer {
 }
 
 /* ==========================================================================
-   9. MODALS & POP-UPS (ENHANCED UI + CURSOR OVERRIDE)
+   9. MODALS & POP-UPS
    ========================================================================== */
 .modal { 
     display: none; 
@@ -673,7 +702,7 @@ footer {
     z-index: 100000; 
     padding: 50px 30px; 
     overflow-y: auto; 
-    cursor: none; /* Keeps custom cursor visible inside modal */
+    cursor: none; 
 }
 
 .modal::-webkit-scrollbar {
@@ -754,7 +783,6 @@ footer {
     margin-bottom: 30px;
 }
 
-/* GRAPHIC DESIGN SHOWCASE BANNER */
 .gallery-banner { 
     width: 100%; 
     margin-bottom: 30px; 
@@ -770,7 +798,6 @@ footer {
     object-fit: cover;
 }
 
-/* DESIGN GRID & CARDS */
 .gallery-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
@@ -803,7 +830,6 @@ footer {
     transform: scale(1.05);
 }
 
-/* EXTENDED COMMERCIAL VIDEO GRID */
 .gallery-video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -857,7 +883,7 @@ footer {
 }
 
 /* ==========================================================================
-   10. THUMBNAIL FALLBACKS (ENSURES VISUAL TEXTURE EVEN BEFORE UPLOADING ASSETS)
+   10. THUMBNAIL FALLBACKS
    ========================================================================== */
 .reel-fallback-1 { 
     background-image: radial-gradient(circle at top right, rgba(0, 255, 102, 0.22), transparent 70%), #0c120e; 
@@ -873,7 +899,7 @@ footer {
 }
 
 /* ==========================================================================
-   11. ANIMATIONS & RESPONSIVE
+   11. ANIMATIONS & MULTI-SCREEN RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @keyframes fastFlicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.6); opacity: 0.4; } 100% { transform: scale(1); opacity: 1; } }
@@ -889,19 +915,131 @@ footer {
     transform: translateY(0); 
 }
 
-@media (max-width: 1024px) {
+/* --- LAPTOP / MEDIUM SCREENS (1024px to 1200px) --- */
+@media (max-width: 1200px) {
     .internship-card {
         grid-template-columns: 1fr;
         gap: 30px;
+        padding: 30px;
+    }
+    .metric-group {
+        max-width: 480px;
     }
 }
 
+/* --- TABLETS / SMALL LAPTOPS (769px to 992px) --- */
+@media (max-width: 992px) {
+    .bento-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .wide { 
+        grid-column: span 2; 
+    }
+    .internship-card {
+        padding: 26px;
+    }
+}
+
+/* --- MOBILE DEVICES (<= 768px) --- */
 @media (max-width: 768px) {
-    .cursor, .cursor-label { display: none !important; }
-    body { cursor: auto; padding: 0 5%; }
-    .modal { cursor: auto; padding: 25px 15px; }
-    .modal-content { padding: 25px 20px; }
-    .bento-grid { grid-template-columns: 1fr; }
-    .card { grid-column: span 1 !important; grid-row: span 1 !important; min-height: 340px !important; }
-    .gallery-video-grid { grid-template-columns: 1fr; }
+    .cursor, .cursor-label { 
+        display: none !important; 
+    }
+    body { 
+        cursor: auto; 
+        padding: 0 5%; 
+    }
+    .hero {
+        height: 70vh;
+    }
+    .about-section {
+        padding: 60px 0;
+    }
+    .internship-section {
+        padding: 50px 0;
+    }
+    .internship-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+    .internship-desc {
+        padding: 14px 14px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+    .metric-group {
+        margin-top: 18px;
+        gap: 8px;
+    }
+    .metric-box {
+        padding: 10px 10px;
+    }
+    .metric-label {
+        font-size: 0.55rem;
+    }
+    .horizontal-scroll {
+        gap: 12px;
+        padding-bottom: 12px;
+    }
+    .reel-item {
+        flex: 0 0 175px;
+        height: 240px;
+        padding: 12px;
+    }
+    .reel-overlay h4 {
+        font-size: 0.85rem;
+    }
+    .bento-grid { 
+        grid-template-columns: 1fr; 
+        padding: 50px 0;
+        gap: 20px;
+    }
+    .card { 
+        grid-column: span 1 !important; 
+        grid-row: span 1 !important; 
+        min-height: 320px !important; 
+        padding: 20px;
+    }
+    .modal { 
+        cursor: auto; 
+        padding: 20px 10px; 
+    }
+    .modal-content { 
+        padding: 22px 16px; 
+    }
+    .gallery-video-grid { 
+        grid-template-columns: 1fr; 
+        gap: 16px;
+    }
+    .gallery-video-card {
+        height: 200px;
+        padding: 18px;
+    }
+    .tech-section {
+        padding: 50px 0;
+    }
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
+/* --- ULTRA-COMPACT SMARTPHONES (<= 480px) --- */
+@media (max-width: 480px) {
+    body { 
+        padding: 0 4%; 
+    }
+    .company-name {
+        font-size: 1.35rem;
+    }
+    .reel-item {
+        flex: 0 0 160px;
+        height: 220px;
+    }
+    .client-pills .pill {
+        font-size: 0.62rem;
+        padding: 3px 8px;
+    }
 }
