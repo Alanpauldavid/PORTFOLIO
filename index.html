@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ALAN PAUL DAVID | Creative Media & Post-Production Artist</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -86,7 +86,7 @@
                     <span class="play-label">PLAY SHOWREEL</span>
                 </button>
             </div>
-            <a class="reel-yt-link" href="https://www.youtube.com/watch?v=1B9tLp8TH3s" target="_blank" rel="noopener">IF IT DOESN'T PLAY → WATCH ON YOUTUBE ↗</a>
+            <a class="reel-yt-link" data-external="1" href="https://www.youtube.com/watch?v=1B9tLp8TH3s" target="_blank" rel="noopener">IF IT DOESN'T PLAY → WATCH ON YOUTUBE ↗</a>
             <div class="showreel-meta">
                 <div class="reel-badge">SHOWREEL // POST-PRODUCTION & VFX</div>
                 <div class="reel-tags">
@@ -291,7 +291,7 @@
     <section class="internship-section reveal">
         <div class="section-header">
             <span class="about-label">> PROFESSIONAL_RESIDENCY</span>
-            <h2 class="about-heading">INTERNSHIP EXPERIENCE</h2>
+            <h2 class="about-heading">NATIVE GROWTH AGENCY EXPERIENCE</h2>
             <p class="section-desc">Commercial post-production, brand ad campaigns, and high-volume video design.</p>
         </div>
 
@@ -567,6 +567,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- IN-SITE VIDEO PLAYER (opens for every YouTube / Instagram link) -->
+    <div class="vmodal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Video player">
+        <div class="vmodal-inner">
+            <div class="vmodal-bar">
+                <div class="vmodal-title" id="vmodalTitle">NOW PLAYING</div>
+                <button class="vmodal-close" id="vmodalClose" aria-label="Close video">&times; CLOSE</button>
+            </div>
+            <div class="vmodal-stage" id="vmodalStage"></div>
+            <a class="vmodal-ext" id="vmodalExt" href="#" target="_blank" rel="noopener">OPEN ON SOURCE ↗</a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
