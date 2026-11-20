@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ALAN PAUL DAVID | Media Alchemist</title>
+    <title>ALAN PAUL DAVID | Creative Media & Post-Production Artist</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -21,14 +21,17 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <header class="hero">
+        <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
         <div class="hero-content reveal">
-            <p class="glitch" data-text="/ POST-PRODUCTION & DESIGN">/ CREATIVE TECHNOLOGIST & POST-PRODUCTION</p>
-            <h1 class="main-title">
-                ALAN<br>
-                <span class="accent-text">CREATIVES</span>
-            </h1>
-            <div class="scroll-indicator">DECRYPT_DATA_ON_SCROLL ↓</div>
+            <p class="glitch" data-text="/ CREATIVE MEDIA & POST-PRODUCTION ARTIST">/ CREATIVE MEDIA & POST-PRODUCTION ARTIST</p>
+            <h1 class="main-title sr-only">ALAN CREATIVES</h1>
+            <div class="particle-wrap" id="particleWrap">
+                <canvas id="particleCanvas" aria-hidden="true"></canvas>
+            </div>
+            <p class="hero-subtitle">VFX • MOTION GRAPHICS • VISUAL DESIGN • 3D • POST-PRODUCTION</p>
+            <div class="scroll-indicator">MOVE_CURSOR_TO_DISTURB // SCROLL ↓</div>
         </div>
     </header>
 
@@ -36,43 +39,266 @@
     <section class="about-section reveal">
         <div class="about-grid">
             <div class="about-left">
-                <div class="about-label">> PROFILE_DATA</div>
+                <div class="about-label">> ARTIST_PROFILE</div>
                 <h2 class="about-heading">ALAN PAUL DAVID</h2>
-                <div class="university-tag">// Post-Production, VFX & UX Specialist</div>
+                <div class="university-tag">// Creative Media & Post-Production Artist</div>
+                <div class="contact-sub">
+                    <p>TEL: +91 9347320417</p>
+                    <p>LOC: INDIA</p>
+                </div>
             </div>
             <div class="about-right">
                 <p class="about-text">
-                    Post-production specialist and visual designer bridging <strong>cinematic editing, VFX compositing, and UX interfaces</strong>. I partner with creators, brands, and agencies on a contract basis to develop raw script concepts into finished, high-impact deliverables.
+                    I am a <strong>Creative Media & Post-Production Artist</strong> specialized in building narrative weight and visual impact through <strong>VFX compositing, kinetic motion graphics, and surgical editorial pacing</strong>.
                 </p>
                 <p class="about-text">
-                    My pipeline combines traditional craft across Premiere, After Effects, Blender, and Figma with <strong>AI-assisted workflows</strong>—accelerating conceptualization, asset generation, and rapid iteration without sacrificing intentional pacing, surgical detail, or human taste.
+                    My approach balances technical pipeline accuracy with directorial taste—translating raw footage, scripts, and 3D scenes into cohesive, high-tempo visual experiences. From festival award-winning narrative films to commercial agency campaigns, every frame is built with purpose.
                 </p>
 
                 <div class="client-pills" style="margin-bottom: 25px;">
                     <span class="pill">VFX & COMPOSITING</span>
                     <span class="pill">POST-PRODUCTION EDITING</span>
-                    <span class="pill">UI / UX DESIGN</span>
                     <span class="pill">MOTION GRAPHICS</span>
-                    <span class="pill">AI-ENHANCED PIPELINES</span>
+                    <span class="pill">3D ENVIRONMENTS</span>
+                    <span class="pill">UI / UX DESIGN</span>
                     <span class="pill">SCRIPT-TO-SCREEN CONTRACTS</span>
                 </div>
 
-                <a href="RESUME.pdf" target="_blank" rel="noopener" class="resume-btn magnetic">DOWNLOAD RESUME.PDF</a>
+                <div class="about-actions">
+                    <a href="RESUME.pdf" target="_blank" rel="noopener" class="resume-btn magnetic">DOWNLOAD RESUME.PDF</a>
+                    <a href="tel:+919347320417" class="resume-btn magnetic">DIRECT_CALL</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 1. FEATURED EXPERIENCE / RECENT COMMERCIAL WORKS -->
+    <!-- SHOWREEL SECTION -->
+    <section class="showreel-section reveal">
+        <div class="section-header">
+            <span class="about-label">> CORE_SHOWCASE</span>
+            <h2 class="about-heading">FEATURED SHOWREEL</h2>
+            <p class="section-desc">A distilled curation of VFX integration, dynamic pacing, 3D scenes, and post-production craft.</p>
+        </div>
+        <div class="showreel-wrapper">
+            <div class="showreel-frame" id="reelFrame" data-vid="1B9tLp8TH3s">
+                <button class="reel-play" id="reelPlay" aria-label="Play showreel" style="background-image:url('https://img.youtube.com/vi/1B9tLp8TH3s/maxresdefault.jpg');">
+                    <span class="play-circle"><span class="play-tri"></span></span>
+                    <span class="play-label">PLAY SHOWREEL</span>
+                </button>
+            </div>
+            <a class="reel-yt-link" href="https://www.youtube.com/watch?v=1B9tLp8TH3s" target="_blank" rel="noopener">IF IT DOESN'T PLAY → WATCH ON YOUTUBE ↗</a>
+            <div class="showreel-meta">
+                <div class="reel-badge">SHOWREEL // POST-PRODUCTION & VFX</div>
+                <div class="reel-tags">
+                    <span>VFX COMPOSITING</span>
+                    <span>COLOR & SOUND DESIGN</span>
+                    <span>3D ASSET INTEGRATION</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECENT WORKS (add a new one by copying a <a class="work-card"> block; newest first) -->
+    <section class="recent-section reveal" id="recent">
+        <div class="section-header">
+            <span class="about-label">> LATEST_DROPS</span>
+            <h2 class="about-heading">RECENT WORKS</h2>
+            <p class="section-desc">Newest projects first. Filter by discipline.</p>
+        </div>
+
+        <div class="filter-bar" id="filterBar">
+            <button class="filter-btn active" data-filter="all">ALL</button>
+            <button class="filter-btn" data-filter="vfx">VFX</button>
+            <button class="filter-btn" data-filter="motion">MOTION</button>
+            <button class="filter-btn" data-filter="3d">3D</button>
+            <button class="filter-btn" data-filter="edit">EDIT</button>
+        </div>
+
+        <div class="work-grid" id="workList">
+            <a class="work-card reel-fallback-2" data-cat="vfx" href="https://www.youtube.com/watch?v=E_NXrhe0UlA" target="_blank" rel="noopener">
+                <span class="work-thumb" style="background-image:url('https://img.youtube.com/vi/E_NXrhe0UlA/maxresdefault.jpg');"></span>
+                <span class="work-play"><span class="work-play-tri"></span></span>
+                <span class="work-info">
+                    <span class="work-meta">VFX • 2026</span>
+                    <span class="work-title">VFX FIGHT SEQUENCE</span>
+                </span>
+                <span class="work-index">01</span>
+            </a>
+            <a class="work-card reel-fallback-3" data-cat="motion" href="https://www.instagram.com/p/De9aHC6Ernn/" target="_blank" rel="noopener">
+                <span class="work-thumb" style="background-image:url('COLLEBRITY.jpg');"></span>
+                <span class="work-play"><span class="work-play-tri"></span></span>
+                <span class="work-info">
+                    <span class="work-meta">MOTION • 2026</span>
+                    <span class="work-title">COLLEBRITY</span>
+                </span>
+                <span class="work-index">02</span>
+            </a>
+            <a class="work-card reel-fallback-4" data-cat="3d" href="https://youtu.be/HPWz1P8NQow" target="_blank" rel="noopener">
+                <span class="work-thumb" style="background-image:url('https://img.youtube.com/vi/HPWz1P8NQow/maxresdefault.jpg');"></span>
+                <span class="work-play"><span class="work-play-tri"></span></span>
+                <span class="work-info">
+                    <span class="work-meta">3D • 2026</span>
+                    <span class="work-title">GAME UI 3D BREAKDOWN</span>
+                </span>
+                <span class="work-index">03</span>
+            </a>
+            <a class="work-card reel-fallback-1" data-cat="3d" href="https://youtu.be/SGlLZhWpTtc" target="_blank" rel="noopener">
+                <span class="work-thumb" style="background-image:url('https://img.youtube.com/vi/SGlLZhWpTtc/maxresdefault.jpg');"></span>
+                <span class="work-play"><span class="work-play-tri"></span></span>
+                <span class="work-info">
+                    <span class="work-meta">3D • 2026</span>
+                    <span class="work-title">SPACE STATION 3D BREAKDOWN</span>
+                </span>
+                <span class="work-index">04</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FEATURED WORK BENTO GRID (PRIORITIZED) -->
+    <section class="works-section reveal">
+        <div class="section-header">
+            <span class="about-label">> SELECTED_PORTFOLIO</span>
+            <h2 class="about-heading">FEATURED WORK</h2>
+            <p class="section-desc">Flagship narrative shorts, visual effects plates, and 3D motion design.</p>
+        </div>
+
+        <main class="bento-grid">
+            <!-- 01: THE LAST STEP (PRIORITY #1) -->
+            <a href="https://www.youtube.com/watch?v=HYD_O6A3NrA" target="_blank" rel="noopener" class="card wide tall reveal award-winner" style="background-image: url('https://img.youtube.com/vi/HYD_O6A3NrA/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">01 // NARRATIVE FILM • VIT FESTIVAL WINNER</div>
+                    <h3>THE LAST STEP</h3>
+                    <p class="project-brief">Award-winning short film focused on psychological tension and dramatic pacing.</p>
+                    <div class="project-specs">
+                        <span><strong>Role:</strong> Lead Post-Production, Assembly & Color</span>
+                        <span><strong>Tools:</strong> Premiere Pro, DaVinci Resolve</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 02: UFO VFX SHOT (PRIORITY #2 - WITH BREAKDOWN PIPELINE) -->
+            <div class="card wide reveal vfx-feature-card" style="background-image: url('https://img.youtube.com/vi/GwUnjqxYTJQ/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">02 // VFX COMPOSITING & CGI INTEGRATION</div>
+                    <h3>UFO VFX SHOT</h3>
+                    <p class="project-brief">Live-action tracking integration with custom 3D asset lighting and digital atmosphere.</p>
+                    
+                    <div class="vfx-pipeline">
+                        <span class="pipeline-title">// PIPELINE BREAKDOWN:</span>
+                        <div class="pipeline-steps">
+                            <span class="step-pill">1. Original Plate</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-pill">2. 3D Matchmove</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-pill">3. CGI Model</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-pill">4. Comp & Light</span>
+                            <span class="step-arrow">→</span>
+                            <span class="step-pill active-pill">5. Final Grade</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/watch?v=GwUnjqxYTJQ" target="_blank" rel="noopener" class="mini-btn">WATCH FULL SHOT →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03: FUNVERSE / FUNKED UP (PRIORITY #3) -->
+            <a href="https://www.youtube.com/watch?v=lImcg1WLj28" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/lImcg1WLj28/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">03 // MOTION GRAPHICS & STYLE</div>
+                    <h3>FUNVERSE</h3>
+                    <p class="project-brief">Rhythm-driven kinetic typography and stylistic motion systems.</p>
+                    <div class="project-specs">
+                        <span><strong>Tools:</strong> After Effects, Illustrator</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 04: LOOK DOWN (PRIORITY #4) -->
+            <a href="https://www.youtube.com/watch?v=WDSK0qe2sD0" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/WDSK0qe2sD0/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">04 // 3D ENVIRONMENT & CINEMATICS</div>
+                    <h3>LOOK DOWN</h3>
+                    <p class="project-brief">Spatial camera movement and mood lighting in a 3D simulated space.</p>
+                    <div class="project-specs">
+                        <span><strong>Tools:</strong> Blender 3D, After Effects</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 05: WASHED MOTION GRAPHICS -->
+            <a href="https://youtube.com/shorts/kgS0MnWBy1c" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/kgS0MnWBy1c/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">05 // EXPERIMENTAL MOTION</div>
+                    <h3>WASHED</h3>
+                    <p class="project-brief">Fast-cadence sync, kinetic typography, and custom motion overlays.</p>
+                    <div class="project-specs">
+                        <span><strong>Tools:</strong> After Effects</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 06: BEYOND US -->
+            <a href="https://www.youtube.com/watch?v=xRrk6qf1wHY" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/xRrk6qf1wHY/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">06 // POST-PRODUCTION & SOUND</div>
+                    <h3>BEYOND US</h3>
+                    <p class="project-brief">Atmospheric narrative exploration combining sound design with color styling.</p>
+                    <div class="project-specs">
+                        <span><strong>Tools:</strong> Premiere Pro, Audition</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 07: ASHTON GREY -->
+            <a href="https://www.youtube.com/shorts/OvhbIuAIgMc" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/OvhbIuAIgMc/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">07 // FREELANCE COMMERCIAL</div>
+                    <h3>ASHTON GREY | BAM MEDIA</h3>
+                    <div class="project-specs">
+                        <span><strong>Deliverable:</strong> Commercial Promo</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 08: VARITI SPA -->
+            <a href="https://youtube.com/shorts/Bj88pupuuBU" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/Bj88pupuuBU/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">08 // SHORT_FORM EDIT</div>
+                    <h3>VARITI SPA | BAM MEDIA</h3>
+                    <div class="project-specs">
+                        <span><strong>Deliverable:</strong> Social Campaign Spot</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 09: NIKE PROMO -->
+            <a href="http://youtube.com/shorts/sd6EhyRQVLM" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/sd6EhyRQVLM/maxresdefault.jpg');">
+                <div class="card-info">
+                    <div class="tag">09 // SPEC COMMERCIAL</div>
+                    <h3>NIKE PROMO</h3>
+                    <div class="project-specs">
+                        <span><strong>Deliverable:</strong> High-Energy Ad Edit</span>
+                    </div>
+                </div>
+            </a>
+        </main>
+    </section>
+
+    <!-- NATIVE GROWTH (PRIORITY #5: AGENCY RESIDENCY & PRODUCTION) -->
     <section class="internship-section reveal">
         <div class="section-header">
-            <span class="about-label">> FEATURED EXPERIENCE</span>
-            <h2 class="about-heading">RECENT WORKS & PRODUCTION</h2>
+            <span class="about-label">> PROFESSIONAL_RESIDENCY</span>
+            <h2 class="about-heading">INTERNSHIP EXPERIENCE</h2>
+            <p class="section-desc">Commercial post-production, brand ad campaigns, and high-volume video design.</p>
         </div>
 
         <div class="internship-container">
             <div class="internship-card">
                 <div class="internship-meta">
-                    <span class="internship-role">// VIDEO EDITOR & GRAPHIC DESIGNER</span>
+                    <span class="internship-role">// POST-PRODUCTION ARTIST & DESIGNER</span>
                     <h3 class="company-name">NATIVE GROWTH</h3>
                     <span class="company-loc">HYDERABAD, INDIA</span>
                     <span class="internship-date">MAY 20 — JULY 31</span>
@@ -80,18 +306,18 @@
                     <div class="metric-group">
                         <div class="metric-box">
                             <span class="metric-num">30+</span>
-                            <span class="metric-label">VIDEOS EDITED</span>
+                            <span class="metric-label">COMMERCIAL CUTS</span>
                         </div>
                         <div class="metric-box">
                             <span class="metric-num">15+</span>
-                            <span class="metric-label">SOCIAL POSTS</span>
+                            <span class="metric-label">MOTION ASSETS</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="internship-details">
                     <p class="internship-desc">
-                        Collaborated with brand strategists to translate client briefs into dynamic visual narratives. Focused on rhythm, intentional pacing, aesthetic grading, and delivering unified visual identities across high-cadence production workflows.
+                        Operated as an in-house post-production specialist delivering high-conversion social ad spots, brand intros, and corporate reels. Translated client briefs into production-ready edits with strict turnaround times, audio polish, and unified visual language.
                     </p>
                     
                     <div class="client-tags">
@@ -105,40 +331,50 @@
                         </div>
                     </div>
 
-                    <!-- HORIZONTAL SCROLLABLE REEL -->
+                    <!-- AUTO-SCROLLING REEL (pauses on hover). To add a video, copy one <a class="reel-item"> block into the track. -->
                     <div class="reel-container">
-                        <span class="works-title">// FEATURED_DELIVERABLES [SCROLL_HORIZONTAL →]</span>
-                        <div class="horizontal-scroll">
-                            <!-- #1 TRUEDRIP -->
-                            <a href="https://www.instagram.com/reel/DbtCqu2zz1N/" target="_blank" rel="noopener" class="reel-item reel-fallback-1" style="background-image: url('TRUEDRIP_GYM.jpg');">
-                                <div class="reel-overlay">
-                                    <span class="reel-tag">COMMERCIAL // D2C</span>
-                                    <h4>TRUEDRIP CAMPAIGN</h4>
-                                </div>
-                            </a>
-
-                            <!-- #2 CRICKROO -->
-                            <a href="https://youtube.com/shorts/qQBkghmOh_s" target="_blank" rel="noopener" class="reel-item" style="background-image: url('https://img.youtube.com/vi/qQBkghmOh_s/maxresdefault.jpg');">
-                                <div class="reel-overlay">
-                                    <span class="reel-tag">MOTION // 3D</span>
-                                    <h4>CRICKROO LOGO ID</h4>
-                                </div>
-                            </a>
-
-                            <!-- #3 ASHWIN KIREET -->
-                            <a href="https://youtube.com/shorts/aMi9WRURUD0" target="_blank" rel="noopener" class="reel-item" style="background-image: url('https://img.youtube.com/vi/aMi9WRURUD0/maxresdefault.jpg');">
-                                <div class="reel-overlay">
-                                    <span class="reel-tag">EVENT // HIGHLIGHT</span>
-                                    <h4>ASHWIN KIREET CUT</h4>
-                                </div>
-                            </a>
-
-                            <!-- MORE WORKS POP-UP TRIGGER -->
+                        <span class="works-title">// FEATURED_DELIVERABLES [AUTO_SCROLL // HOVER_TO_PAUSE]</span>
+                        <div class="reel-row">
                             <div class="reel-item popup-trigger-card" id="nativeMoreTrigger">
                                 <div class="trigger-content">
                                     <span class="plus-icon">+3</span>
                                     <h4>MORE_PROJECTS</h4>
                                     <p>CLICK TO OPEN ARCHIVE</p>
+                                </div>
+                            </div>
+                            <div class="marquee" id="reelMarquee">
+                                <div class="marquee-track" id="reelTrack">
+                                    <a href="https://www.instagram.com/reel/DbtCqu2zz1N/" target="_blank" rel="noopener" class="reel-item reel-fallback-1" style="background-image: url('TRUEDRIP_GYM.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">COMMERCIAL // D2C</span><h4>TRUEDRIP CAMPAIGN</h4></div>
+                                    </a>
+                                    <a href="https://youtube.com/shorts/qQBkghmOh_s" target="_blank" rel="noopener" class="reel-item" style="background-image: url('https://img.youtube.com/vi/qQBkghmOh_s/maxresdefault.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">MOTION // 3D</span><h4>CRICKROO LOGO ID</h4></div>
+                                    </a>
+                                    <a href="https://youtube.com/shorts/aMi9WRURUD0" target="_blank" rel="noopener" class="reel-item" style="background-image: url('https://img.youtube.com/vi/aMi9WRURUD0/maxresdefault.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">EVENT // HIGHLIGHT</span><h4>ASHWIN KIREET CUT</h4></div>
+                                    </a>
+                                    <a href="https://www.instagram.com/reel/Da5U---BFhR/" target="_blank" rel="noopener" class="reel-item reel-fallback-2" style="background-image: url('SDH.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">HEALTHCARE // B2C</span><h4>SECUNDERABAD DENTAL</h4></div>
+                                    </a>
+                                    <a href="https://www.instagram.com/reel/DZxYcJYgaTe/" target="_blank" rel="noopener" class="reel-item reel-fallback-3" style="background-image: url('Utsavam.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">EVENT // HIGHLIGHT</span><h4>UTSAVAM</h4></div>
+                                    </a>
+                                    <a href="https://www.instagram.com/p/Dbk-Moxh_rm/" target="_blank" rel="noopener" class="reel-item reel-fallback-4" style="background-image: url('SDH\ FAST.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">MOTION // DESIGN</span><h4>SECUNDERABAD DENATAL</h4></div>
+                                    </a>
+                                    <!-- EMPTY SLOTS: replace href, image, tag and title -->
+                                    <a href="https://www.instagram.com/reel/DZDFZmygT3n/" target="_blank" rel="noopener" class="reel-item reel-fallback-4" style="background-image: url('UTSAVAM\ 1.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">EVENT</span><h4>UTSAVAM</h4></div>
+                                    </a>
+                                    <a href="https://www.instagram.com/reel/Da-2igETUTI/" target="_blank" rel="noopener" class="reel-item reel-fallback-4" style="background-image: url('ZEE\ .jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">DIGTIAL MARKET</span><h4>ZEESHAAN.AI</h4></div>
+                                    </a>
+                                    <a href="https://www.instagram.com/p/DaMtypgFN0k/?img_index=1" target="_blank" rel="noopener" class="reel-item reel-fallback-4" style="background-image: url('UT\ CAR.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">CAROUSEL</span><h4>UTSAVAM</h4></div>
+                                    </a>
+                                    <a href="https://www.instagram.com/p/DaAmblXKqhS/" target="_blank" rel="noopener" class="reel-item reel-fallback-4" style="background-image: url('SDH\ TEST.jpg');">
+                                        <div class="reel-overlay"><span class="reel-tag">Q & A</span><h4>SECUNDERABAD DENTAL</h4></div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -148,124 +384,70 @@
         </div>
     </section>
 
-    <!-- 2. BENTO MAIN GRID -->
-    <main class="bento-grid">
-        <!-- 01: THE LAST STEP -->
-        <a href="https://www.youtube.com/watch?v=HYD_O6A3NrA" target="_blank" rel="noopener" class="card wide tall reveal award-winner" style="background-image: url('https://img.youtube.com/vi/HYD_O6A3NrA/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">01 // WINNER: VIT_FILM_FESTIVAL</div>
-                <h3>THE LAST STEP</h3>
-                <p>Award-winning short film.</p>
-            </div>
-        </a>
-
-        <!-- 02: WASHED -->
-        <a href="https://youtube.com/shorts/kgS0MnWBy1c" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/kgS0MnWBy1c/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">02 // MOTION_GRAPHICS</div>
-                <h3>WASHED</h3>
-                <p>Experimental video motion graphics edit.</p>
-            </div>
-        </a>
-
-        <!-- 03: GRAPHIC DESIGN POPUP -->
-        <div class="card reveal graphic-trigger" id="designTrigger" style="background-image: url('3.jpg'); border: 1px dashed var(--accent);">
-            <div class="card-info">
-                <div class="tag">03 // DESIGN & UI</div>
-                <h3>GRAPHIC & UI DESIGN</h3>
-                <p>Brand assets, composites & UI concepts. Click to expand.</p>
-            </div>
-        </div>
-
-        <!-- 04: NIKE PROMO -->
-        <a href="http://youtube.com/shorts/sd6EhyRQVLM" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/sd6EhyRQVLM/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">04 // ADVERTISING</div>
-                <h3>NIKE PROMO</h3>
-            </div>
-        </a>
-
-        <!-- 05: ASHTON GREY -->
-        <a href="https://www.youtube.com/shorts/OvhbIuAIgMc" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/OvhbIuAIgMc/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">05 // FREELANCE</div>
-                <h3>ASHTON GREY | BAM MEDIA</h3>
-            </div>
-        </a>
-
-        <!-- 06: SHORT FORM -->
-        <a href="https://youtube.com/shorts/Bj88pupuuBU" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/Bj88pupuuBU/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">06 // SHORT_FORM</div>
-                <h3>VARITI SPA | BAM MEDIA</h3>
-            </div>
-        </a>
-
-        <!-- 07: LOOK DOWN -->
-        <a href="https://www.youtube.com/watch?v=WDSK0qe2sD0" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/WDSK0qe2sD0/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">07 // 3D_ANIMATION</div>
-                <h3>LOOK DOWN</h3>
-            </div>
-        </a>
-
-        <!-- 08: FUNKED UP -->
-        <a href="https://www.youtube.com/watch?v=lImcg1WLj28" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/lImcg1WLj28/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">08 // MOTION_DESIGN</div>
-                <h3>FUNKED UP</h3>
-            </div>
-        </a>
-
-        <!-- 09: BEYOND US -->
-        <a href="https://www.youtube.com/watch?v=xRrk6qf1wHY" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/xRrk6qf1wHY/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">09 // EXPERIMENTAL</div>
-                <h3>BEYOND US</h3>
-            </div>
-
-        <!-- 10: UFO -->   
-        </a>
-
-                <a href="https://www.youtube.com/watch?v=xRrk6qf1wHY" target="_blank" rel="noopener" class="card reveal" style="background-image: url('https://img.youtube.com/vi/GwUnjqxYTJQ/maxresdefault.jpg');">
-            <div class="card-info">
-                <div class="tag">10 // UFO CGI COMPOSTION</div>
-                <h3>UFO VFX </h3>
-            </div>
-        </a>
-    </main>
-
-    <!-- 3. TECH STACK (TOOLING & PIPELINE) -->
+    <!-- DISCIPLINE-FIRST SKILLS & PIPELINE -->
     <section class="tech-section reveal">
         <div class="section-header">
-            <span class="about-label">> PIPELINE_&_TOOLING</span>
-            <h2 class="about-heading">CREATIVE ENGINE</h2>
+            <span class="about-label">> CRAFT_&_TOOLING</span>
+            <h2 class="about-heading">CREATIVE SKILLS</h2>
+            <p class="section-desc">Organized by creative discipline first, software ecosystem second.</p>
         </div>
         <div class="tech-grid">
             <div class="tech-card">
-                <span class="tech-cat">MOTION / VFX</span>
-                <h3>AFTER EFFECTS</h3>
-                <span class="tech-tag">// COMPOSITING_&_MOTION</span>
+                <span class="tech-cat">PRIMARY DISCIPLINE</span>
+                <h3>VFX & COMPOSITING</h3>
+                <p class="tech-desc">Plate tracking, keying, 3D CGI matchmoving, screen replacement, and color space balance.</p>
+                <span class="tech-tag">After Effects • Blender</span>
             </div>
             <div class="tech-card">
-                <span class="tech-cat">NLE EDITING</span>
-                <h3>PREMIERE PRO</h3>
-                <span class="tech-tag">// TIMELINE_&_PACING</span>
+                <span class="tech-cat">PRIMARY DISCIPLINE</span>
+                <h3>MOTION GRAPHICS</h3>
+                <p class="tech-desc">Kinetic typography, animated logo identity stings, UI animations, and commercial promos.</p>
+                <span class="tech-tag">After Effects • Illustrator</span>
             </div>
             <div class="tech-card">
-                <span class="tech-cat">3D ENVIRONMENT</span>
-                <h3>BLENDER</h3>
-                <span class="tech-tag">// 3D_SCENES_&_VFX</span>
+                <span class="tech-cat">PRIMARY DISCIPLINE</span>
+                <h3>POST-PRODUCTION & NLE</h3>
+                <p class="tech-desc">Pacing, narrative assembly, rhythmic sound synchronization, and finishing timelines.</p>
+                <span class="tech-tag">Premiere Pro • Audition</span>
             </div>
             <div class="tech-card">
-                <span class="tech-cat">RASTER DESIGN</span>
-                <h3>PHOTOSHOP</h3>
-                <span class="tech-tag">// TEXTURING_&_ASSETS</span>
+                <span class="tech-cat">PRIMARY DISCIPLINE</span>
+                <h3>3D & SPATIAL DESIGN</h3>
+                <p class="tech-desc">Environment modeling, realistic camera blocking, studio lighting, and materials texturing.</p>
+                <span class="tech-tag">Blender 3D</span>
             </div>
-            <div class="tech-card">
-                <span class="tech-cat">UI / UX</span>
-                <h3>FIGMA</h3>
-                <span class="tech-tag">// INTERFACE_DESIGN</span>
+        </div>
+    </section>
+
+    <!-- MULTIDISCIPLINARY CAPABILITIES -->
+    <section class="secondary-skills-section reveal">
+        <div class="section-header">
+            <span class="about-label">> EXPANDED_CAPABILITIES</span>
+            <h2 class="about-heading">MULTIDISCIPLINARY SKILLS</h2>
+            <p class="section-desc">Complementary creative fields integrated into my broader visual workflow.</p>
+        </div>
+
+        <div class="secondary-grid">
+            <div class="secondary-box" id="designTrigger">
+                <div class="sec-badge">EXPANDABLE GALLERY</div>
+                <h4>GRAPHIC & VISUAL DESIGN</h4>
+                <p>Digital compositing, social collateral, and typography systems in Photoshop & Illustrator.</p>
+                <span class="click-hint">CLICK TO VIEW ASSET ARCHIVE →</span>
+            </div>
+            <div class="secondary-box">
+                <div class="sec-badge">SYSTEMS & LAYOUT</div>
+                <h4>UI / UX & INTERFACES</h4>
+                <p>Design systems, screen mockups, wireframing, and interactive components built in Figma.</p>
+            </div>
+            <div class="secondary-box">
+                <div class="sec-badge">PRE-PRODUCTION</div>
+                <h4>PREVIS & CONCEPTING</h4>
+                <p>Storyboard sequencing, camera angle exploration, and visual script breakdown.</p>
+            </div>
+            <div class="secondary-box">
+                <div class="sec-badge">PIPELINE INTEGRATION</div>
+                <h4>AI VIDEO & ASSET WORKFLOWS</h4>
+                <p>Prompt ideation, style exploration, and rapid concept generation to accelerate production timelines.</p>
             </div>
         </div>
     </section>
@@ -276,9 +458,9 @@
             <div class="archive-line"></div>
             <p class="archive-text">
                 <span class="pulse-icon"></span> 
-                HAVE A SCRIPT, BRAND CONCEPT, OR INTERACTION IN MIND?
+                LOOKING FOR A CREATIVE MEDIA & POST-PRODUCTION ARTIST?
                 <br>
-                <span>AVAILABLE FOR FREELANCE CONTRACTS & COLLABORATIVE PIPELINES.</span>
+                <span>AVAILABLE FOR FREELANCE CONTRACTS, SCRIPT-TO-SCREEN PROJECTS & COLLABORATIONS.</span>
             </p>
             <a href="mailto:alanpauldavid90@gmail.com" class="archive-btn magnetic">START_COLLABORATION</a>
         </div>
